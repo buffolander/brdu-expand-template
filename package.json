@@ -1,8 +1,8 @@
 {
   "name": "@brdu/expand-template",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Expands placeholders in a string template based on named or positional arguments. It's also possible to use complex templates including lists and conditionals.",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest"
   },

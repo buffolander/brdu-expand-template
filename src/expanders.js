@@ -10,11 +10,11 @@ const {
 
 const simpleExpansion = ({
   template,
-  simpleInstances,
-  args,
+  simpleInstances = [],
+  args = {},
   index = null,
 }) => {
-  if (!simpleInstances) return template
+  if (!simpleInstances.length) return template
   let copy = ''.concat(template)
 
   if (index >= 0) copy = copy.replace('%(index)', index)
@@ -24,8 +24,12 @@ const simpleExpansion = ({
   return copy
 }
 
-const conditionalExpansion = ({ template, conditionalInstances, args }) => {
-  if (!conditionalInstances) return template
+const conditionalExpansion = ({
+  template,
+  conditionalInstances = [],
+  args = {},
+}) => {
+  if (!conditionalInstances.length) return template
   let copy = ''.concat(template)
 
   conditionalInstances.map((section) => {
@@ -36,7 +40,7 @@ const conditionalExpansion = ({ template, conditionalInstances, args }) => {
       copy = slicedCopy
       return 'skip_section'
     }
-    placeholderKeys = placeholderKeys.match(/([^,|^\s]+)/g)
+    placeholderKeys = placeholderKeys.match(/([^(\,|\s)]+)/g)
     const placeholderValues = placeholderKeys.map((k) => get(args, k))
     if (placeholderValues.includes(undefined)) {
       copy = slicedCopy
@@ -53,8 +57,12 @@ const conditionalExpansion = ({ template, conditionalInstances, args }) => {
   return copy
 }
 
-const listExpansion = ({ template, listInstances, args }) => {
-  if (!listInstances) return template
+const listExpansion = ({
+  template,
+  listInstances = [],
+  args = {},
+}) => {
+  if (!listInstances.length) return template
   let copy = ''.concat(template)
 
   listInstances.map((section) => {
