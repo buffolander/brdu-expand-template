@@ -1,0 +1,34 @@
+{
+  "name": "@brdu/expand-template",
+  "version": "1.0.0",
+  "description": "Expands placeholders in a string template based on named or positional arguments. It's also possible to use complex templates including lists and conditionals.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buffolander/brdu-expand-template.git"
+  },
+  "keywords": [
+    "string template",
+    "expand variables",
+    "conditional template",
+    "list template"
+  ],
+  "author": "buffolander",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/buffolander/brdu-expand-template/issues"
+  },
+  "homepage": "https://github.com/buffolander/brdu-expand-template#readme",
+  "dependencies": {
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.4.0"
+  }
+}
